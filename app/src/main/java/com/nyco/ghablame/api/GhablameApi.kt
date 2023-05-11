@@ -1,10 +1,10 @@
 package com.nyco.ghablame.api
 
-import retrofit2.Call
+import com.nyco.ghablame.model.Foods
 import retrofit2.http.GET
 
 interface GhablameApi {
 
-    @GET("/ghablame/users/api")
-    suspend fun getFoods():Call<List<Foods>>
+    @GET("ghablame/users/api")
+    suspend fun getFoods(): List<Foods>
 }
