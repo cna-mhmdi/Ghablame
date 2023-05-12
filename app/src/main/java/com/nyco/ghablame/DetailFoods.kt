@@ -1,12 +1,11 @@
 package com.nyco.ghablame
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 
-class DetailFoods: AppCompatActivity() {
+class DetailFoods : AppCompatActivity() {
 
-    companion object{
+    companion object {
         const val EXTRA_FOOD = "food"
     }
 

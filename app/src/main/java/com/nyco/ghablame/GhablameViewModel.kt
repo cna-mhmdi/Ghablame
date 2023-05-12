@@ -7,7 +7,7 @@ import com.nyco.ghablame.model.Foods
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class GhablameViewModel(private val ghablameRepository: GhablameRepository):ViewModel() {
+class GhablameViewModel(private val ghablameRepository: GhablameRepository) : ViewModel() {
 
 
     init {
@@ -17,8 +17,8 @@ class GhablameViewModel(private val ghablameRepository: GhablameRepository):View
     val allFoods: LiveData<List<Foods>>
         get() = ghablameRepository.foods
 
-    private fun fetchAllFoods(){
-        viewModelScope.launch(Dispatchers.IO){
+    private fun fetchAllFoods() {
+        viewModelScope.launch(Dispatchers.IO) {
             ghablameRepository.fetchFoods()
         }
     }

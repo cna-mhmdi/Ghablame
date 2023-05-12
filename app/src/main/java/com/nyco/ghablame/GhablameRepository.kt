@@ -12,9 +12,9 @@ class GhablameRepository(private val ghablameApi: GhablameApi) {
     val foods: LiveData<List<Foods>>
         get() = foodsLiveData
 
-    suspend fun fetchFoods(){
-            val foods = ghablameApi.getFoods()
-            foodsLiveData.postValue(foods)
+    suspend fun fetchFoods() {
+        val foods = ghablameApi.getFoods()
+        foodsLiveData.postValue(foods)
     }
 
 }

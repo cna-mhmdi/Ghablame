@@ -5,7 +5,7 @@ import com.nyco.ghablame.api.GhablameApi
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-class GhablameApplication: Application() {
+class GhablameApplication : Application() {
 
     lateinit var ghablameRepository: GhablameRepository
 
@@ -19,6 +19,6 @@ class GhablameApplication: Application() {
 
         val ghablameApi = retrofit.create(GhablameApi::class.java)
 
-        ghablameRepository =GhablameRepository(ghablameApi)
+        ghablameRepository = GhablameRepository(ghablameApi)
     }
 }
