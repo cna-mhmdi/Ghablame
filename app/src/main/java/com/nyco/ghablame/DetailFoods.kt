@@ -11,7 +11,7 @@ class DetailFoods : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.layout_ghablame_intro)
+        setContentView(R.layout.activity_detail_food)
 
     }
 }
