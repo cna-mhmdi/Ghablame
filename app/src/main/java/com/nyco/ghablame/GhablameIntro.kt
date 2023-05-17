@@ -37,7 +37,7 @@ class GhablameIntro : AppCompatActivity() {
                 Toast.makeText(
                     this@GhablameIntro,
                     "از اتصال دستگاه خود به اینترنت مطمعن شوید",
-                    Toast.LENGTH_SHORT
+                    Toast.LENGTH_LONG
                 ).show()
                 delay(2000)
                 finish()
