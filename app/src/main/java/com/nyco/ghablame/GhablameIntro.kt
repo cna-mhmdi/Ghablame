@@ -5,9 +5,10 @@ import android.os.Build
 import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
-import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.nyco.ghablame.utility.Utils
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -29,9 +30,18 @@ class GhablameIntro : AppCompatActivity() {
 
         lifecycleScope.launch {
             delay(5000)
-            startActivity(Intent(this@GhablameIntro, MainActivity::class.java))
-            finish()
+            if (Utils.isConnected(this@GhablameIntro)) {
+                startActivity(Intent(this@GhablameIntro, MainActivity::class.java))
+                finish()
+            } else {
+                Toast.makeText(
+                    this@GhablameIntro,
+                    "از اتصال دستگاه خود به اینترنت مطمعن شوید",
+                    Toast.LENGTH_SHORT
+                ).show()
+                delay(2000)
+                finish()
+            }
         }
     }
-
 }
