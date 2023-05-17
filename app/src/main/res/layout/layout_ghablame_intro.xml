@@ -22,7 +22,8 @@
             android:layout_below="@id/LogoImage"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="250dp"
-            android:text="@string/app_name"
-            android:textSize="20sp" />
+            android:text="قابلمه"
+            android:textSize="20sp"
+            android:fontFamily="@font/vazir_medium"/>
 
 </RelativeLayout>
