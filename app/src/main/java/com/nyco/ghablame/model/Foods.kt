@@ -7,6 +7,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Foods(
     val username: String = "",
-    //val foodDesc: String = "",
-    //val foodsImage: String = ""
+    val first_name: String = "",
+    val last_name: String = "",
+    val email: String = ""
 ):Parcelable
