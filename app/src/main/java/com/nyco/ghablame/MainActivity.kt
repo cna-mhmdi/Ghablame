@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.nyco.ghablame.model.Foods
+import org.imaginativeworld.oopsnointernet.dialogs.signal.NoInternetDialogSignal
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,6 +23,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        noInternetDialog()
 
         val recyclerView: RecyclerView = findViewById(R.id.main_recyclerview)
         recyclerView.adapter = mainAdapter
@@ -42,5 +45,28 @@ class MainActivity : AppCompatActivity() {
             putExtra(DetailFoods.EXTRA_FOOD, food)
         }
         startActivity(intent)
+    }
+    private fun noInternetDialog() {
+        NoInternetDialogSignal.Builder(
+            this,
+            lifecycle
+        ).apply {
+            dialogProperties.apply {
+
+                cancelable = false
+                noInternetConnectionTitle = "اینترنت متصل نیست !"
+                noInternetConnectionMessage =
+                    "برای استفاده از استورینو نیاز به اینترنت دارید."
+                showInternetOnButtons = true
+                pleaseTurnOnText = "لطفا اینترنت خود را روشن کنید."
+                wifiOnButtonText = "Wifi"
+                mobileDataOnButtonText = "Mobile data"
+                onAirplaneModeTitle = "حالت هوایپیما فعال است !"
+                onAirplaneModeMessage = "برای استفاده از استورینو نیاز به اینترنت دارید."
+                pleaseTurnOffText = "لطفا دستگاه خود را از حالت هواپیما خارج کنید."
+                airplaneModeOffButtonText = "حالت هواپیما"
+                showAirplaneModeOffButtons = true
+            }
+        }.build()
     }
 }
