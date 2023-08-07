@@ -29,19 +29,9 @@ class GhablameIntro : AppCompatActivity() {
         setContentView(R.layout.layout_ghablame_intro)
 
         lifecycleScope.launch {
-            delay(5000)
-            if (Utils.isConnected(this@GhablameIntro)) {
-                startActivity(Intent(this@GhablameIntro, MainActivity::class.java))
-                finish()
-            } else {
-                Toast.makeText(
-                    this@GhablameIntro,
-                    "از اتصال دستگاه خود به اینترنت مطمعن شوید",
-                    Toast.LENGTH_LONG
-                ).show()
-                delay(2000)
-                finish()
-            }
+            delay(1000)
+            startActivity(Intent(this@GhablameIntro, MainActivity::class.java))
+            finish()
         }
     }
 }

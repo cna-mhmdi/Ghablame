@@ -1,32 +1,40 @@
 package com.nyco.ghablame.utility
 
+import android.app.Activity
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
+import androidx.lifecycle.Lifecycle
+import org.imaginativeworld.oopsnointernet.dialogs.signal.NoInternetDialogSignal
 
 
 class Utils {
 
     companion object {
 
-        fun isConnected(context: Context): Boolean {
-            val connectivityManager =
-                context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                val networkCapabilities = connectivityManager.activeNetwork ?: return false
-                val actNw =
-                    connectivityManager.getNetworkCapabilities(networkCapabilities) ?: return false
-                return when {
-                    actNw.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
-                    actNw.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
-                    actNw.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
-                    else -> false
+        fun noInternetDialog(context: Context, lifecycle: Lifecycle) {
+            NoInternetDialogSignal.Builder(
+                context as Activity,
+                lifecycle
+            ).apply {
+                dialogProperties.apply {
+
+                    cancelable = false
+                    noInternetConnectionTitle = "اینترنت متصل نیست !"
+                    noInternetConnectionMessage =
+                        "برای استفاده از قابلمه نیاز به اینترنت دارید."
+                    showInternetOnButtons = true
+                    pleaseTurnOnText = "لطفا اینترنت خود را روشن کنید."
+                    wifiOnButtonText = "Wifi"
+                    mobileDataOnButtonText = "Mobile data"
+                    onAirplaneModeTitle = "حالت هوایپیما فعال است !"
+                    onAirplaneModeMessage = "برای استفاده از قابلمه نیاز به اینترنت دارید."
+                    pleaseTurnOffText = "لطفا دستگاه خود را از حالت هواپیما خارج کنید."
+                    airplaneModeOffButtonText = "حالت هواپیما"
+                    showAirplaneModeOffButtons = true
                 }
-            } else {
-                val networkInfo = connectivityManager.activeNetworkInfo ?: return false
-                return networkInfo.isConnected
-            }
+            }.build()
         }
     }
 }
