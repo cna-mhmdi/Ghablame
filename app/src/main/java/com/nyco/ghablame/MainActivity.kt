@@ -2,7 +2,6 @@ package com.nyco.ghablame
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -56,13 +55,13 @@ class MainActivity : AppCompatActivity() {
                 cancelable = false
                 noInternetConnectionTitle = "اینترنت متصل نیست !"
                 noInternetConnectionMessage =
-                    "برای استفاده از استورینو نیاز به اینترنت دارید."
+                    "برای استفاده از قابلمه نیاز به اینترنت دارید."
                 showInternetOnButtons = true
                 pleaseTurnOnText = "لطفا اینترنت خود را روشن کنید."
                 wifiOnButtonText = "Wifi"
                 mobileDataOnButtonText = "Mobile data"
                 onAirplaneModeTitle = "حالت هوایپیما فعال است !"
-                onAirplaneModeMessage = "برای استفاده از استورینو نیاز به اینترنت دارید."
+                onAirplaneModeMessage = "برای استفاده از قابلمه نیاز به اینترنت دارید."
                 pleaseTurnOffText = "لطفا دستگاه خود را از حالت هواپیما خارج کنید."
                 airplaneModeOffButtonText = "حالت هواپیما"
                 showAirplaneModeOffButtons = true

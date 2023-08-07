@@ -55,9 +55,7 @@ dependencies {
     //viewModel & liveData
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
-    //alertView
-    implementation 'com.irozon.alertview:alertview:1.0.1'
-    //internet checker
+    //internetchecker
     implementation 'org.imaginativeworld.oopsnointernet:oopsnointernet:2.0.0'
 
 }
