@@ -8,6 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="background">#557A46</color>
-    <color name="cardViews">#7A9D54</color>
+    <color name="background">#2C3333</color>
+    <color name="cardViews">#393E46</color>
 </resources>
